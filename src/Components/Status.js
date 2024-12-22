@@ -21,7 +21,7 @@ function Status() {
     return (
         <div style={{ marginTop: '5rem' }}>
             <Thermometer
-                theme="light"
+                theme="dark"
                 value={temperature}  // ใช้ค่าจาก Firebase
                 max={100}
                 steps={3}

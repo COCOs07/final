@@ -44,6 +44,10 @@ const Add_pass = () => {
 };
 
 const StyledWrapper = styled.div`
+*{
+ background-color: #24b4fb;
+  
+}
   button {
     border: 2px solid #24b4fb;
     background-color: #24b4fb;

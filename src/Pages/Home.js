@@ -27,7 +27,12 @@ import Add_pass from '../Components/Add_pass';
 const Home = () => {
     // ส่วนนี้คือสิ่งที่จะถูก render (แสดงผล) บนหน้าจอ
     return (
-        <div> {/* สร้าง div container หลัก */}
+        <div style={{ 
+            backgroundImage:  `url(${require('../IMG/background2.jpg')})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            height: '100vh' }}> {/* สร้าง div container หลัก */}
             <div> {/* สร้าง div container ย่อย */}
                 <Navbar01 /> {/* แสดงผลคอมโพเนนต์ Navbar01 */}
             </div>

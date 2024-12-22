@@ -5,9 +5,18 @@ import Button from 'react-bootstrap/Button';
 // สร้าง functional component ชื่อ Detail
 function Detail() {
   return (
-    <div style={{ display: 'flex', justifyContent: 'end', marginTop: '1rem' }}> 
+    <div style={{ 
+      display: 'flex', 
+      justifyContent: 'end', 
+      marginTop: '1rem',  }}> 
       {/* สร้าง div container จัดวางเนื้อหาชิดขวา และมีระยะห่างด้านบน 1rem */}
-      <Card className='shadow' style={{ width: '18rem' }}> 
+      <Card className='shadow' 
+      style={{ width: '18rem',
+              backgroundColor: 'transparent',
+              border: '3px solid rgba(255,255,255,0.3)',
+              backdropFilter: 'blur(100px)',
+              color: 'white',
+              boxShadow: '0 ' }}> 
         {/* สร้าง Card มีเงา และความกว้าง 18rem */}
         <Card.Body> {/* สร้างส่วนเนื้อหาภายใน Card */}
           <Card.Title>รายละเอียด</Card.Title> {/* หัวข้อของ Card */}

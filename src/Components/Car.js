@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button'; // นำเข้า Button จา
 import Swal from 'sweetalert2'; // นำเข้า Swal จาก sweetalert2 เพื่อใช้แสดงข้อความแจ้งเตือน
 import { database, ref, onValue, update, push } from '../Firebase/Firebase'; // นำเข้า Firebase ฟังก์ชันต่าง ๆ เช่น database, ref, onValue, update, push เพื่อใช้จัดการกับฐานข้อมูล Firebase
 import { useEffect, useState } from 'react'; // นำเข้า useEffect และ useState จาก React เพื่อจัดการกับ state และ lifecycle ของ component
+import { Transfer } from 'antd';
 
 function Car() {
   const [passengerData, setPassengerData] = useState({}); // ใช้ useState เพื่อสร้างตัวแปร passengerData เก็บข้อมูลผู้โดยสาร
@@ -202,9 +203,18 @@ function Car() {
         </div>
       )}
       {!isLoading && !error && ( // ถ้าโหลดเสร็จและไม่มีข้อผิดพลาด ให้แสดงข้อมูล
-        <Card className='shadow' style={{ width: '50rem', height: '25rem', marginTop: '7rem', padding: '2rem' }}>
+        <Card className='shadow' 
+        style={{ 
+          width: '50rem', 
+          height: '25rem', 
+          marginTop: '7rem', 
+          padding: '2rem', 
+          backgroundColor: 'transparent',
+          backdropFilter: 'blur(50px)',
+          border: '3px solid rgba(255,255,255,0.3)',
+          boxShadow: '0 4px 10px rgba(0,0,0,0.1)' }}>
           <Card.Body className='gap-2 row' style={{ display: 'flex', justifyContent: 'space-between' }}>
-            <Card.Title className='text-center' style={{ marginTop: '-2rem' }}>ระบบตรวจจับและแจ้งเตือนเด็กตกหล่นบนรถตู้</Card.Title>
+            <Card.Title className='text-center' style={{ marginTop: '-2rem' , color: 'white' }}>ระบบตรวจจับและแจ้งเตือนเด็กตกหล่นบนรถตู้</Card.Title>
 
             <Button onClick={driver} style={{ width: '10rem', height: '10rem' }} variant={passengerData.driverPresent ? "primary" : "danger"}>
               Driver {/* ปุ่มสำหรับจัดการสถานะคนขับ */}

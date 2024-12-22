@@ -42,9 +42,10 @@ const Signup_form = () => {
 
     return (
         <StyledWrapper>
+            <div className='container'>
             <form className="form" onSubmit={handleSubmit}>
-                <p className="title">Register </p>
-                <p className="message">Signup now and get full access to our app. </p>
+                <p className="title">ลงทะเบียน </p>
+                <p className="message">ลงทะเบียนเพื่อเข้าใช้งานเว็บไซต์ </p>
                 <div className="flex">
                     <label>
                         <input
@@ -102,34 +103,59 @@ const Signup_form = () => {
                     />
                     <span>Confirm password</span>
                 </label>
-                <button type="submit" className="submit">Submit</button>
-                <p className="signin" onClick={() => navigate('/login')}>Already have an account? <a href="#">Signin</a> </p>
+                <button type="submit" className="submit">ลงทะเบียน</button>
             </form>
+            <div className="signup-box">
+                    <h2>Welcome</h2>
+                    <p>ยินดีต้อนรับสู้การลงทะเบียนเว็บไซต์ เพื่อเข้าใช้งานตัวระบบตรวจจับและแจ้งเตือนเด็กตกหล่นบนรถตู้แบบเต็มรูปแบบ</p> 
+                    <p className="signin" onClick={() => navigate('/login')}>มีบัญชีอยู่แล้วหรือไม่?</p>
+                    <button className="signup-button" onClick={() => navigate('/login')}>เข้าสู่ระบบ</button>
+                </div>
+            </div>
         </StyledWrapper>
     );
 };
 
 const StyledWrapper = styled.div`
+  * {
+    backdrop-filter: blur(20px);
+    padding: 0px;
+    margin: 0px;
+    border-radius: 30px;
+  }
+
+  .container {
+    display: flex;
+    gap: 60px;
+    height: 550px;
+    border-radius: 30px;
+    border:3px solid rgba(255,255,255, 0.3) ;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative; /* กำหนดให้ container เป็นตำแหน่งอ้างอิง */
+
+    }
+    
   .form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
     max-width: 350px;
-    background-color: #fff;
-    padding: 20px;
+    padding: 25px;
     border-radius: 20px;
     position: relative;
+    border: none;
+    padding-left: 45px;
+    padding-right: 5px;
   }
-
   .title {
     font-size: 28px;
-    color: royalblue;
+    color: white;
     font-weight: 600;
     letter-spacing: -1px;
     position: relative;
     display: flex;
+    padding-left: 90px;
     align-items: center;
-    padding-left: 30px;
   }
 
   .title::before,.title::after {
@@ -139,13 +165,13 @@ const StyledWrapper = styled.div`
     width: 16px;
     border-radius: 50%;
     left: 0px;
-    background-color: royalblue;
+    background-color: #FFE6E6;
   }
 
   .title::before {
     width: 18px;
     height: 18px;
-    background-color: royalblue;
+    background-color: #AD88C6;
   }
 
   .title::after {
@@ -155,7 +181,7 @@ const StyledWrapper = styled.div`
   }
 
   .message, .signin {
-    color: rgba(88, 87, 87, 0.822);
+    color: white;
     font-size: 14px;
   }
 
@@ -182,18 +208,20 @@ const StyledWrapper = styled.div`
   }
 
   .form label .input {
-    width: 100%;
-    padding: 10px 10px 20px 10px;
-    outline: 0;
-    border: 1px solid rgba(105, 105, 105, 0.397);
+    width: 100%; /* ทำให้ input ขยายเต็มพื้นที่ฟอร์ม */
+    padding: 10px;
+    height: 50px; /* กำหนดความสูงให้ดูสวยงาม */
+    outline: none;
+    border: 1px solid grey;
     border-radius: 10px;
-  }
-
+    background-color: transparent;
+    box-sizing: border-box; /* ให้ padding รวมอยู่ใน width */
+}
   .form label .input + span {
     position: absolute;
     left: 10px;
     top: 15px;
-    color: grey;
+    color: white;
     font-size: 0.9em;
     cursor: text;
     transition: 0.3s ease;
@@ -215,18 +243,68 @@ const StyledWrapper = styled.div`
   }
 
   .submit {
-    border: none;
-    outline: none;
-    background-color: royalblue;
-    padding: 10px;
+    margin-top: 10px;
+    width: 100%;
+    height: 50px;
     border-radius: 10px;
-    color: #fff;
+    border: none;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    gap: 10px;
+    background-color: #441752;
+    cursor: pointer;
+    transition: 0.2s;
+    color: white;
+  }
+
+   .signup-box {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(40px);
+    border-radius: 30% 5% 5% 30%;
+    transition: border-radius 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 60px;
+    width: 450px;
+    text-align: center;
+    color: #333;
+}
+
+.signup-box h2, 
+.signup-box p {
+    color: #fff; /* สีของฟอนต์ */
+    margin: 10px 0; /* ระยะห่างด้านบนและล่าง */
+    background: none; /* ลบพื้นหลัง */
+    backdrop-filter: none; /* ลบเบลอ */
+}
+
+  .signup-button {
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
     font-size: 16px;
-    transform: .3s ease;
+    font-weight: 500;
+    transition: .2s;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    background-color: #640D5F;
+    
+  }
+
+  .signup-button:hover {
+    background-color: #441752;
   }
 
   .submit:hover {
-    background-color: rgb(56, 90, 194);
+  background-color: #1B1833;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
   }
 
   @keyframes pulse {

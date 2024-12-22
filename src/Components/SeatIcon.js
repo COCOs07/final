@@ -15,7 +15,7 @@ const SeatIcon = ({ seatNumber, isOccupied, onClick }) => {
         <rect x="10" y="10" width="80" height="60" rx="15" ry="15" />
         <rect x="10" y="80" width="80" height="60" rx="15" ry="15" />
         <text x="50%" y="50%" dominantBaseline="middle" textAnchor="middle" fill="white" fontSize="16">
-          Seat {seatNumber}
+          seat {seatNumber}
         </text>
       </svg>
     </div>
