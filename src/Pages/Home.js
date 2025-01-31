@@ -28,7 +28,7 @@ const Home = () => {
     // ส่วนนี้คือสิ่งที่จะถูก render (แสดงผล) บนหน้าจอ
     return (
         <div style={{ 
-            backgroundImage:  `url(${require('../IMG/background2.jpg')})`,
+            backgroundImage:  `url(${require('../IMG/background3.jpg')})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
